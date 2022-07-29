@@ -7,7 +7,7 @@ def main():
 
     x = np.load("test_image/image.npy")
     print(onnxruntime.get_available_providers())
-    ort_session = onnxruntime.InferenceSession(onnx_path, providers=['CPUExecutionProvider'])
+    ort_session = onnxruntime.InferenceSession(onnx_path, providers=['VsiNpuExecutionProvider'])
 
     # compute ONNX Runtime output prediction
     ort_inputs = {ort_session.get_inputs()[0].name: x}
